@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="clearAllBtn">Clear All</button>
+            <button id="saveBtn">Save</button>
+            <button id="loadBtn">Load</button>
+            <input type="file" id="csvInput" accept=".csv" style="display:none">
+        </header>
+        <section id="addPersonSection">
+            <h2>Add Person</h2>
+            <input type="text" id="personName" placeholder="Name">
+            <input type="color" id="personColor" value="#ff0000">
+            <button id="addPersonBtn">Add</button>
+        </section>
+        <section id="mainSection">
+            <div class="controls">
+                <select id="personDropdown"></select>
+                <button id="addToTableBtn">Adicionar</button>
+                <button id="exportPdfBtn">Export to PDF</button>
+            </div>
+            <div id="scheduleTableContainer"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

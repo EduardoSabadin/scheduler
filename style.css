@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 24px;
+}
+header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#addPersonSection {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#addPersonSection h2 {
+    margin: 0 10px 0 0;
+    font-size: 1.1em;
+}
+#mainSection .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #1565c0;
+}
+input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+select {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+#scheduleTableContainer {
+    overflow-x: auto;
+}
+table.schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fafafa;
+}
+table.schedule-table th, table.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    min-width: 80px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+table.schedule-table th {
+    background: #1976d2;
+    color: #fff;
+    font-weight: 600;
+}
+table.schedule-table td.selected {
+    outline: 2px solid #1976d2;
+    background: #e3f2fd;
+}
+.person-label {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95em;
+    margin: 2px 0;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 8px;
+    }
+    table.schedule-table th, table.schedule-table td {
+        padding: 6px;
+        font-size: 0.95em;
+    }
+    #addPersonSection, #mainSection .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+} 
