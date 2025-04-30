@@ -21,6 +21,7 @@ const saveBtn = document.getElementById('saveBtn');
 const loadBtn = document.getElementById('loadBtn');
 const csvInput = document.getElementById('csvInput');
 const exportPdfBtn = document.getElementById('exportPdfBtn');
+const clearSelectionBtn = document.getElementById('clearSelectionBtn');
 
 // --- Utility Functions ---
 function makeCellKey(hour, day) {
@@ -49,13 +50,16 @@ function renderScheduleTable() {
         DAYS.forEach(day => {
             const key = makeCellKey(hour, day);
             let cellContent = '';
+            let cellStyle = '';
+            let cellClass = selectedCells.has(key) ? 'selected' : '';
             if (schedule[key] !== undefined) {
                 const person = people[schedule[key]];
                 if (person) {
-                    cellContent = `<span class="person-label" style="background:${person.color}">${person.name}</span>`;
+                    cellContent = person.name;
+                    cellStyle = `background:${person.color};color:#000;font-weight:600;`;
                 }
             }
-            html += `<td data-hour="${hour}" data-day="${day}" class="${selectedCells.has(key) ? 'selected' : ''}">${cellContent}</td>`;
+            html += `<td data-hour="${hour}" data-day="${day}" class="${cellClass}" style="${cellStyle}">${cellContent}</td>`;
         });
         html += '</tr>';
     });
@@ -201,6 +205,15 @@ csvInput.addEventListener('change', (e) => {
 
 exportPdfBtn.addEventListener('click', () => {
     exportTableToPDF();
+});
+
+clearSelectionBtn.addEventListener('click', () => {
+    // Remove assignments for selected cells
+    selectedCells.forEach(key => {
+        delete schedule[key];
+    });
+    resetSelection();
+    saveToLocalStorage();
 });
 
 function exportTableToPDF() {

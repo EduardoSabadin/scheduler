@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #f4fdf6;
     margin: 0;
     padding: 0;
 }
@@ -8,55 +8,77 @@ body {
     max-width: 900px;
     margin: 30px auto;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(33,145,80,0.04);
+    padding: 28px 18px 18px 18px;
+}
+.main-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #219150;
+    letter-spacing: 1px;
+    text-shadow: none;
 }
 header {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    justify-content: center;
 }
 #addPersonSection {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
+    background: #eafaf1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    box-shadow: none;
 }
 #addPersonSection h2 {
-    margin: 0 10px 0 0;
-    font-size: 1.1em;
+    margin: 0 8px 0 0;
+    font-size: 1em;
+    color: #219150;
 }
 #mainSection .controls {
     display: flex;
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     align-items: center;
+    background: #eafaf1;
+    border-radius: 6px;
+    padding: 6px 8px;
 }
 button {
-    background: #1976d2;
+    background: #016b2d;
     color: #fff;
     border: none;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 7px 16px;
     cursor: pointer;
     font-size: 1em;
+    font-weight: 500;
+    box-shadow: none;
     transition: background 0.2s;
 }
 button:hover {
-    background: #1565c0;
+    background: #219150;
 }
 input[type="text"] {
     padding: 6px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #b6e2c6;
     border-radius: 4px;
     font-size: 1em;
+    background: #f8fefc;
 }
 select {
     padding: 6px 10px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #b6e2c6;
     font-size: 1em;
+    background: #f8fefc;
 }
 #scheduleTableContainer {
     overflow-x: auto;
@@ -64,33 +86,39 @@ select {
 table.schedule-table {
     border-collapse: collapse;
     width: 100%;
-    background: #fafafa;
+    background: #f8fefc;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: none;
 }
 table.schedule-table th, table.schedule-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #d6f5e3;
     padding: 10px;
     text-align: center;
     min-width: 80px;
     position: relative;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 table.schedule-table th {
-    background: #1976d2;
+    background: #016b2d;
     color: #fff;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 table.schedule-table td.selected {
-    outline: 2px solid #1976d2;
-    background: #e3f2fd;
+    outline: 2px solid #219150;
+    background: #eafaf1;
 }
 .person-label {
     display: inline-block;
     padding: 2px 8px;
-    border-radius: 12px;
+    border-radius: 10px;
     color: #fff;
-    font-size: 0.95em;
+    font-size: 0.97em;
     margin: 2px 0;
+    background: #219150;
+    box-shadow: none;
 }
 @media (max-width: 600px) {
     .container {
